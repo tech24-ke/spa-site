@@ -195,7 +195,8 @@ export default function Page() {
         />
 
         {/* soft blush gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(1000px_480px_at_70%_10%,rgba(122,92,106,0.25)_0%,rgba(122,92,106,0.2)_35%,rgba(30,27,46,0.35)_60%),linear-gradient(180deg,rgba(30,27,46,0.55)_0%,rgba(30,27,46,0.75)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(30,27,46,0.45)_0%,rgba(30,27,46,0.65)_100%)]" />
+
 
         {/* content */}
         <div className="relative z-10 h-full max-w-6xl mx-auto px-6 flex flex-col items-center justify-center text-center text-white">
