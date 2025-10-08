@@ -268,17 +268,17 @@ export default function Page() {
               {
                 title: "Aromatherapy Massage",
                 desc: "60–90 min full-body with warm oils and calming blends.",
-                img: "/templates/imag1.jpg",
+                img: "/treatments/image1.jpg",
               },
               {
                 title: "Hydra Glow Facial",
                 desc: "Deep cleanse, exfoliation & hydrating masks for instant radiance.",
-                img: "/templates/image5.jpg",
+                img: "/treatments/image2.jpg",
               },
               {
                 title: "Classic Mani-Pedi",
                 desc: "Cuticle care, shaping & long-wear polish in serene comfort.",
-                img: "/templates/image2.jpg",
+                img: "/treatments/image3.jpg",
               },
             ].map((card) => (
               <article key={card.title} className="overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-sm">

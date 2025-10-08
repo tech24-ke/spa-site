@@ -5,6 +5,8 @@ import { site } from "@/site.config";
 
 // Use your hero as OG image (1200x630 recommended)
 const ogImage = "/templates/spa-hero.jpg";
+// add alongside your metadata export
+export const viewport = { themeColor: "#7A5C6A" };
 
 export const metadata: Metadata = {
   title: site.metaTitle,
@@ -31,8 +33,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Favicon + PWA bits */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/spa-favicon.svg?v=4" type="image/svg+xml" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png?v=4" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7A5C6A" />
+        
         <meta name="theme-color" content="#7A5C6A" />
       </head>
       <body>{children}</body>
