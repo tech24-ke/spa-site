@@ -1,0 +1,11 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bright Mind Tutors">
+  <g fill="#0B1B3A" stroke="#0B1B3A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- mortarboard top -->
+    <polygon points="32,96 128,60 224,96 128,132" />
+    <!-- band -->
+    <rect x="96" y="128" width="64" height="16" rx="4" />
+    <!-- tassel -->
+    <path d="M196 102 L208 110 L208 146" />
+    <circle cx="208" cy="146" r="6" />
+  </g>
+</svg>
