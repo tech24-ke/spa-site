@@ -17,6 +17,20 @@ const EMAIL = (site.contact?.email as string) || "hello@tech24.co.ke";
 
 const MAP_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`;
 
+/* ---------- WhatsApp helper ---------- */
+const waLink = (msg?: string) =>
+  `https://wa.me/${WA}${msg ? `?text=${encodeURIComponent(msg)}` : ""}`;
+
+const MSG = {
+  topbar: `Hi ${BRAND}, I'd like to book a session.`,
+  hero: `Hi ${BRAND}, I'd like to book a spa session. When is your next available slot?`,
+  bookTreatment: (t: string) => `Hi ${BRAND}, I'd like to book: ${t}.`,
+  askPrice: (t: string) => `Hi ${BRAND}, what's the price for ${t}?`,
+  bookPackage: (p: string) => `Hi ${BRAND}, I'm interested in the "${p}" package.`,
+  contact: `Hi ${BRAND}, please assist.`,
+  quick: `Hi ${BRAND}!`,
+};
+
 /* ---------- Inline icons ---------- */
 function LeafIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -141,7 +155,7 @@ export default function Page() {
           </div>
           <div className="flex items-center gap-2">
             <Link
-              href={`https://wa.me/${WA}`}
+              href={waLink(MSG.topbar)}
               target="_blank"
               className="rounded-full bg-white text-[#7A5C6A] px-4 py-1.5 font-semibold hover:bg-gray-100 transition"
             >
@@ -173,7 +187,6 @@ export default function Page() {
                 priority
               />
             )}
-            {/* Accessible name without visible text */}
             <span className="sr-only">{BRAND}</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -216,7 +229,7 @@ export default function Page() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
-              href={`https://wa.me/${WA}`}
+              href={waLink(MSG.hero)}
               target="_blank"
               className="h-12 rounded-full bg-[#25D366] text-white font-semibold px-6 grid place-items-center hover:brightness-95"
             >
@@ -285,14 +298,14 @@ export default function Page() {
                   <p className="text-gray-600 mt-1">{card.desc}</p>
                   <div className="mt-5 flex items-center justify-between">
                     <Link
-                      href={`https://wa.me/${WA}`}
+                      href={waLink(MSG.bookTreatment(card.title))}
                       target="_blank"
                       className="text-[#7A5C6A] font-semibold hover:underline underline-offset-4"
                     >
                       Book now
                     </Link>
                     <Link
-                      href={`https://wa.me/${WA}`}
+                      href={waLink(MSG.askPrice(card.title))}
                       target="_blank"
                       className="rounded-xl border border-gray-200 px-4 py-2 text-sm hover:bg-gray-50"
                     >
@@ -360,7 +373,7 @@ export default function Page() {
               </ul>
               <div className="pb-16" />
               <Link
-                href={`https://wa.me/${WA}`}
+                href={waLink(MSG.bookPackage(p.name))}
                 target="_blank"
                 className="absolute left-6 right-6 bottom-6 rounded-xl bg-[#25D366] text-white font-semibold py-2.5 grid place-items-center hover:brightness-95"
               >
@@ -508,7 +521,7 @@ export default function Page() {
             </p>
             <div className="mt-6 flex items-center gap-4 flex-wrap">
               <Link
-                href={`https://wa.me/${WA}`}
+                href={waLink(MSG.contact)}
                 target="_blank"
                 className="rounded-full bg-[#25D366] text-white px-6 py-3 font-semibold hover:brightness-95"
               >
@@ -540,7 +553,7 @@ export default function Page() {
 
       {/* Floating WhatsApp */}
       <Link
-        href={`https://wa.me/${WA}`}
+        href={waLink(MSG.quick)}
         target="_blank"
         aria-label="Chat on WhatsApp"
         className="fixed bottom-6 right-6 z-40 rounded-full h-14 w-14 flex items-center justify-center shadow-xl bg-[#25D366] hover:brightness-95 transition"
