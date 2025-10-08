@@ -166,20 +166,15 @@ export default function Page() {
               <Image
                 src="/spa-logo.svg"
                 alt={site.brand}
-                width={34}
-                height={34}
-                className="shrink-0"
+                width={160}
+                height={40}
+                className="h-9 w-auto"
                 onError={() => setLogoError(true)}
+                priority
               />
             )}
-            <div className="leading-tight">
-              <div className="font-semibold tracking-tight text-gray-900 group-hover:text-[#7A5C6A] transition">
-                {BRAND}
-              </div>
-              <div className="text-[11px] text-gray-500 -mt-0.5">
-                Wellness &amp; Beauty
-              </div>
-            </div>
+            {/* Accessible name without visible text */}
+            <span className="sr-only">{BRAND}</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#services" className="hover:text-[#7A5C6A]">Services</a>

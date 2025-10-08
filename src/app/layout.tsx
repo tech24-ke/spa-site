@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     images: [ogImage],
   },
   metadataBase: new URL(site.baseUrl),
-  themeColor: "#7A5C6A", // spa accent
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
