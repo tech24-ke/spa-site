@@ -98,6 +98,18 @@ export default function Page() {
     return () => obs.disconnect();
   }, []);
 
+  // ====== REAL GALLERY ARRAY ======
+  const galleryImages = [
+    { src: "/gallery/image1.jpg", alt: "Massage therapy with candlelight" },
+    { src: "/gallery/image2.jpg", alt: "Hydrating facial treatment" },
+    { src: "/gallery/image3.jpg", alt: "Cozy spa interior with warm tones" },
+    { src: "/gallery/image4.jpg", alt: "Pedicure corner in natural palette" },
+    { src: "/gallery/image5.jpg", alt: "Hot stone massage setup" },
+    { src: "/gallery/image6.jpg", alt: "Couples relaxation session" },
+    { src: "/gallery/image7.jpg", alt: "Reception and lounge design" },
+    { src: "/gallery/image8.jpg", alt: "Aromatherapy essentials" },
+  ];
+
   return (
     <main className="min-h-screen bg-white text-gray-900 pb-28">
       {/* ===== TOP BAR ===== */}
@@ -196,7 +208,6 @@ export default function Page() {
 
         {/* soft blush gradient */}
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(30,27,46,0.45)_0%,rgba(30,27,46,0.65)_100%)]" />
-
 
         {/* content */}
         <div className="relative z-10 h-full max-w-6xl mx-auto px-6 flex flex-col items-center justify-center text-center text-white">
@@ -371,9 +382,9 @@ export default function Page() {
           Inside the Spa
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {galleryImages.map((img, i) => (
             <div key={i} className="relative h-40 md:h-48 rounded-2xl overflow-hidden">
-              <Image src="/templates/spa-hero.jpg" alt="" fill className="object-cover" />
+              <Image src={img.src} alt={img.alt} fill className="object-cover" />
             </div>
           ))}
         </div>
