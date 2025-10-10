@@ -548,8 +548,17 @@ export default function Page() {
 
       {/* ===== FOOTER ===== */}
       <footer className="bg-gray-100 py-8 px-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} {BRAND}. Powered by Tech24.
+        © {new Date().getFullYear()} {BRAND}. Patient-first care, powered by{" "}
+        <a
+          href="https://www.tech24.co.ke/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold underline underline-offset-2 text-[#0A6C73] hover:text-[#075A60]"
+        >
+          Tech24
+        </a>.
       </footer>
+
 
       {/* Floating WhatsApp */}
       <Link
